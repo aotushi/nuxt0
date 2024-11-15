@@ -11,6 +11,8 @@ COPY package*.json ./
 RUN npm i
 #对外暴露的端口
 COPY . .
+# 添加构建步骤 render
+RUN npm run build
 EXPOSE 3000
 #程序启动脚本
 CMD ["npm", "start"]
