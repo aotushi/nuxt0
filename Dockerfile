@@ -15,4 +15,6 @@ COPY . .
 RUN npm run build
 EXPOSE 3000
 #程序启动脚本
-CMD ["npm", "start"]
+# CMD ["npm", "start"]
+# 直接在 CMD 中包含所有命令
+CMD sh -c "npm run migrate && npm run seed && npm start"
